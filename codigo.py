@@ -1,15 +1,15 @@
 from collections import namedtuple
 
 registros=[]
-registros = namedtuple("Descripcion", "Cantidad, Costo")
+registrost = namedtuple('Descripcion', ['cantidad', 'costo'])
 registros1=("Llantas 1, 10, 1000")
-resgitros2=("Llantas 2, 20, 1200")
-registros.append=registros1
-registros.append=resgitros2
-diccionario=[]
-diccionario[1]=registros1
-diccionario[2]=resgitros2
-diccionario.keys=diccionario[1,2]
+registros2=("Llantas 2, 20, 1200")
+registros.append(registros1)
+registros.append(registros2)
+diccionario={}
+diccionario[1001]=registros1
+diccionario[1002]=registros2
+
 opcion=True
 while opcion==True:
     print("Menu")
@@ -17,18 +17,20 @@ while opcion==True:
     print("2:Consultar registro de una venta")
     print("3.Salir")
     menu=(input("Digite su opcion: "))
-
     if menu=='1':
-        registrar=input("Escriba los detalles del registro: (Descripcion, Cantidad, Costo)")
-        for registrar in registros:
-            registros.append=registrar
-            diccionario[3]=registrar
+        registrar=input("Escriba los detalles del registro: (Descripcion, Cantidad, Costo): ")
+        for l in registros:
+            registros.append(registrar)
+            diccionario[1003]=registrar
             print(registrar)
             break
+        iva=registrar.costo * 0.16
+        total=iva+registrar.costo
+        print(iva,total)
+        print(registros)
     elif menu=='2':
-        consultar=input("Digite el codigo del registro a buscar: (1-10")
-        for consultar in diccionario.keys:
-            print(diccionario[consultar])
+        consultar=input("Digite el codigo del registro a buscar (1001-1010): ")
+        print(diccionario[consultar])
     elif menu=='3':
         print("Fin.")
     else:
